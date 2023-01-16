@@ -6,7 +6,7 @@ tasks:
       - checkout
       - commands:
           - |
-            mvn sonar:sonar \
-             -Dsonar.projectKey=testing \
-             -Dsonar.host.url=http://65.2.9.93:9000 \
-             -Dsonar.login=13f3308ed7250313208d102344be94adf6df9ed4
+            dotnet tool install --global dotnet-sonarscanner
+            dotnet sonarscanner begin /k:"testing" /d:sonar.host.url="http://65.2.9.93:9000"  /d:sonar.login="13f3308ed7250313208d102344be94adf6df9ed4"
+            dotnet build
+            dotnet sonarscanner end /d:sonar.login="13f3308ed7250313208d102344be94adf6df9ed4"
