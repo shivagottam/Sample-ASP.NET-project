@@ -1,0 +1,12 @@
+---
+tasks:
+  hello-job:
+    runner: razorci/openjdk:11-buster
+    steps:
+      - checkout
+      - commands:
+          - |
+            mvn sonar:sonar \
+             -Dsonar.projectKey=testing \
+             -Dsonar.host.url=http://65.2.9.93:9000 \
+             -Dsonar.login=13f3308ed7250313208d102344be94adf6df9ed4
