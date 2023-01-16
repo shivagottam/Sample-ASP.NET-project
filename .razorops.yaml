@@ -1,7 +1,7 @@
 ---
 tasks:
   hello-job:
-    runner: razorci/openjdk:11-buster
+    #runner: razorci/openjdk:11-buster
     steps:
       - checkout
       - commands:
